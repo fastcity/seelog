@@ -6,7 +6,6 @@ import (
 	"golang.org/x/net/websocket"
 )
 
-var buffer = make(chan string,10)
 
 // 入口函数
 func See(filePath,addr string)  {
@@ -16,8 +15,9 @@ func See(filePath,addr string)  {
 	if addr == "" {
 		log.Println("addr 不可为空")
 	}
+	go monitor(filePath)
 	http.Handle("/", http.FileServer(http.Dir(".")))
-	http.Handle("/conn", websocket.Handler(genConn))
+	http.Handle("/ws", websocket.Handler(genConn))
 	log.Fatal(http.ListenAndServe(addr,nil))
 }
 

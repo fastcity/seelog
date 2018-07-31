@@ -3,25 +3,51 @@
 <head>
     <meta charset="UTF-8"/>
     <title>seelog</title>
+    <link rel="shortcut icon" href="http://www.eiguo.cn/favicon.ico" type="image/x-icon" />
     <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 
     <script>
         $(function() {
-            var ws = new WebSocket("ws://localhost:8080/echo");
+            var ws = new WebSocket("ws://localhost:9999/ws");
             ws.onmessage = function(e) {
-                $('<li>').text(event.data).appendTo($ul);
+                $('#log').append("<p style='color: white'>"+ e.data +"</p>").scrollTop($('#log')[0].scrollHeight)
             };
-            var $ul = $('#msg-list');
-            $('#sendBtn').click(function(){
-                var data = $('#name').val();
-                ws.send(data);
-            });
+            ws.onclose = function () {
+                $('#status').css("background-color","red")
+                alert("进行重联")
+            }
+            ws.onopen = function () {
+                $('#status').css("background-color","chartreuse").text("连接成功")
+            }
+            ws.onerror = function (e) {
+                $('#status').css("background-color","red")
+            }
         });
     </script>
+
 </head>
 <body>
-<input id="name" type="text"/>
-<input type="button" id="sendBtn" value="send"/>
-<ul id="msg-list"></ul>
+
+<header>
+    <h2 id="title">实时查看日志信息 &nbsp;<button id="status" style="background-color: darkorange">正在连接...</button></h2>
+</header>
+<div id="log"></div>
 </body>
+
+<style>
+    body {
+        margin-left: 2%
+    }
+    #title {
+
+    }
+    #log {
+        width:96%;
+        height: 800px;
+        background-color:#181818;
+        border: 1px #ccc solid;
+        overflow-y: scroll;
+        float: left;
+    }
+</style>
 </html>

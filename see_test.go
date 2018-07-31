@@ -5,11 +5,12 @@ import (
 	"os"
 	"fmt"
 	"time"
+	"github.com/xmge/seelog"
 )
 
 func TestSee(t *testing.T) {
 
-/*	go func() {
+	go func() {
 		os.Remove("test.log")
 		f,err := os.Create("test.log")
 		if err != nil {
@@ -18,17 +19,19 @@ func TestSee(t *testing.T) {
 		for i := 1; i<= 100; i++ {
 			time.Sleep(1 * time.Second)
 			testLog := fmt.Sprintf("第[%d]行日志\n",i)
-			fmt.Print(testLog)
 			f.WriteString(testLog)
 		}
-	}()*/
-	//seelog.See("http://localhost:9999","test.log")
-
-	f,err := os.Open("test.log")
-	if err != nil {
-	}
-	fmt.Println(f.Stat())
+	}()
+	time.Sleep(10 * time.Minute)
 }
+
+func TestSee3(t *testing.T) {
+	seelog.See("test.log",":9999")
+}
+
+
+
+
 
 func TestSee2(t *testing.T) {
 
