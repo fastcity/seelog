@@ -14,7 +14,7 @@
 * 在浏览器中访问 *http://host:port*
 
 ### 项目展示
-![image](https://xmge-github.oss-cn-beijing.aliyuncs.com/img/seelog1.gif)
+![image](https://github.com/xmge/file/blob/master/images/seelog1.gif)
 
 ### 项目TODO
 * 页面布局
