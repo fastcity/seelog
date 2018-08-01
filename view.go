@@ -37,7 +37,7 @@ func page(w http.ResponseWriter, r *http.Request) {
 				
 					<script>
 						$(function() {
-							var ws = new WebSocket("ws://localhost`+ addr +`/ws");
+							var ws = new WebSocket("ws://"+ window.location.host +"/ws");
 							ws.onmessage = function(e) {
 								$('#log').append("<p style='color: white'>"+ e.data +"</p>").scrollTop($('#log')[0].scrollHeight)
 							};

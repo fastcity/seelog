@@ -4,11 +4,7 @@
     <list default="true" id="8f9bec7e-79c1-40c8-84fb-84fce6fa8d2c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change beforePath="$PROJECT_DIR$/monitor.go" afterPath="$PROJECT_DIR$/monitor.go" />
-      <change beforePath="$PROJECT_DIR$/see.go" afterPath="$PROJECT_DIR$/see.go" />
       <change beforePath="$PROJECT_DIR$/see_test.go" afterPath="$PROJECT_DIR$/see_test.go" />
-      <change beforePath="$PROJECT_DIR$/test.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/view.go" afterPath="$PROJECT_DIR$/view.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,13 +25,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="180">
+              <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="73" />
               <folding>
-                <marker date="1533092384000" expanded="true" signature="442:454" ph="..." />
+                <marker date="1533098645641" expanded="true" signature="454:466" ph="..." />
               </folding>
             </state>
           </provider>
@@ -45,17 +41,27 @@
         <entry file="file://$PROJECT_DIR$/view.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
-              <caret line="21" column="19" lean-forward="true" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+              <caret line="21" column="19" lean-forward="false" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="see_test.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="see_test.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/see_test.go">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="17" column="19" lean-forward="false" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="monitor.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/monitor.go">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="378">
-              <caret line="31" column="9" lean-forward="true" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+              <caret line="24" column="30" lean-forward="false" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -64,8 +70,8 @@
       <file leaf-file-name="see.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/see.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="23" column="9" lean-forward="true" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+            <state relative-caret-position="126">
+              <caret line="12" column="5" lean-forward="false" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -109,11 +115,11 @@
         <option value="$PROJECT_DIR$/monitor_test.go" />
         <option value="$PROJECT_DIR$/test.go" />
         <option value="$PROJECT_DIR$/see.go" />
-        <option value="$PROJECT_DIR$/see_test.go" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/view.go" />
         <option value="$PROJECT_DIR$/test.log" />
         <option value="$PROJECT_DIR$/monitor.go" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/see_test.go" />
       </list>
     </option>
   </component>
@@ -247,9 +253,6 @@
     <option name="remove_strategy" value="false" />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestSee_in_see_test_go_(1) - 2018.08.01 at 11h 02m 21s.xml">
-      <configuration name="TestSee in see_test.go (1)" configurationId="GoTestRunConfiguration" />
-    </history-entry>
     <history-entry file="TestSee_in_see_test_go_(1) - 2018.08.01 at 11h 02m 29s.xml">
       <configuration name="TestSee in see_test.go (1)" configurationId="GoTestRunConfiguration" />
     </history-entry>
@@ -277,10 +280,12 @@
     <history-entry file="TestSee_in_see_test_go_(1) - 2018.08.01 at 11h 11m 03s.xml">
       <configuration name="TestSee in see_test.go (1)" configurationId="GoTestRunConfiguration" />
     </history-entry>
+    <history-entry file="TestSee_in_see_test_go_(1) - 2018.08.01 at 12h 44m 56s.xml">
+      <configuration name="TestSee in see_test.go (1)" configurationId="GoTestRunConfiguration" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="9" width="1855" height="1084" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25261998" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -493,28 +498,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/monitor.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="24" column="31" lean-forward="true" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <marker date="1533092384000" expanded="true" signature="442:454" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="21" column="19" lean-forward="true" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+          <caret line="21" column="19" lean-forward="false" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
           <folding />
         </state>
       </provider>
@@ -527,19 +514,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/monitor.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="24" column="30" lean-forward="false" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/see.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="23" column="9" lean-forward="true" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+        <state relative-caret-position="126">
+          <caret line="12" column="5" lean-forward="false" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/see_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="31" column="9" lean-forward="true" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+        <state relative-caret-position="180">
+          <caret line="17" column="19" lean-forward="false" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="19" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="73" />
+          <folding>
+            <marker date="1533098645641" expanded="true" signature="454:466" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
