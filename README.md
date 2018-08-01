@@ -11,10 +11,14 @@
 ### 集成方式
 * 在项目中引入seelog, **go get github.com/xmge/seelog**
 * 在代码中 执行 **seelog.See(logpath,port)**
-* 在浏览器中访问 **http://host:port*
+* 在浏览器中访问 *http://host:port*
 
 ### 项目展示
+![image](https://github.com/xmge/file/blob/master/images/seelog.gif)
+
 
 ### TODO
+=======
+### 项目TODO
 * 页面布局
 
