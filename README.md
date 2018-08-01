@@ -14,7 +14,7 @@
 * 在浏览器中访问 *http://host:port*
 
 ### 项目展示
-![image](https://github.com/xmge/file/blob/master/images/seelog.gif)
+![image](https://github.com/xmge/file/blob/master/images/seelog1.gif)
 
 
 ### TODO
