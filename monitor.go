@@ -3,16 +3,23 @@ package seelog
 import (
 	"os"
 	"time"
+	"log"
 )
 
-var buffer = make(chan string,1024)
 
-func monitor(filePath string) error {
+// 监控日志文件
+func monitor(filePath string){
+	defer func() {
+		if err := recover();err != nil{
+			log.Printf("[seelog] error:%+v",err)
+		}
+	}()
+
 	fileInfo,err := os.Stat(filePath)
 	if err != nil {
-		return err
+		log.Printf("[seelog] error:%v",err.Error())
 	}
-	buff := make([]byte,1024)
+	msg := make([]byte,1024)
 	offset := fileInfo.Size()
 	for {
 		fileInfo,_ = os.Stat(filePath)
@@ -20,10 +27,11 @@ func monitor(filePath string) error {
 		if offset < newOffset {
 			file,_ := os.Open(filePath)
 			file.Seek(offset,0)
-			file.Read(buff)
-			buffer <- string(buff)
+			file.Read(msg)
+			manager.broadcast <- msg
 			offset = newOffset
 		}
 		time.Sleep(200 * time.Millisecond)
 	}
+
 }

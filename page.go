@@ -1,29 +1,10 @@
 package seelog
 
 import (
-	"golang.org/x/net/websocket"
-	"log"
 	"net/http"
 )
 
-var conn *websocket.Conn
-
-// 进行页面的socket的连接
-func genConn(ws *websocket.Conn)  {
-	conn = ws
-	for {
-		view(<- buffer)
-	}
-}
-
-// 向页面写数据
-func view(msg string)  {
-	_,err := conn.Write([]byte(msg))
-	if err != nil {
-		log.Println("[seelog]",err.Error())
-	}
-}
-
+// 展示页面
 func page(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type","text/html")
 	w.WriteHeader(200)

@@ -1,38 +1,38 @@
 package seelog
 
 import (
-	"net/http"
 	"log"
-	"fmt"
-	"golang.org/x/net/websocket"
 )
 
+//  启动seelog
+func See(filePath string,port int) {
 
-// 入口函数
-func See(filePath string,port int)  {
-	go func() {
-
-		defer func() {
-			if err := recover();err != nil{
-				log.Println("seelog 发生错误")
-			}
-		}()
-
-		if filePath == "" {
-			log.Println("filePath 不可为空")
+		// 检查参数
+		if !checkParam(filePath,port){
+			return
 		}
-		if port == 0 {
-			log.Println("port 不可为空")
-		}
+
+		// 开启socket管理器
+		go manager.start()
+		// 监控文件
 		go monitor(filePath)
-		http.Handle("/test",http.FileServer(http.Dir("index.html")))
-		http.HandleFunc("/",page)
-		http.Handle("/ws", websocket.Handler(genConn))
-		log.Fatal(http.ListenAndServe(fmt.Sprintf(":%d",port),nil))
-	}()
+		// 开启httpServer
+		go server(port)
 }
 
 
+// 参数验证
+func checkParam(filePath string,port int) bool {
+	if filePath == "" {
+		log.Println("filePath 不可为空")
+		return false
+	}
+	if port == 0 {
+		log.Println("port 不可为空")
+		return false
+	}
+	return true
+}
 
 
 
