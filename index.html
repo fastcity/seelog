@@ -13,14 +13,13 @@
                 $('#log').append("<p style='color: white'>"+ e.data +"</p>").scrollTop($('#log')[0].scrollHeight)
             };
             ws.onclose = function () {
-                $('#status').css("background-color","red")
-                alert("进行重联")
+                $('#status').css("background-color","red").text("链接失败")
             }
             ws.onopen = function () {
                 $('#status').css("background-color","chartreuse").text("连接成功")
             }
             ws.onerror = function (e) {
-                $('#status').css("background-color","red")
+                $('#status').css("background-color","red").text("链接失败")
             }
         });
     </script>
