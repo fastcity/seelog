@@ -25,6 +25,7 @@ func See(filePath string,port int)  {
 			log.Println("port 不可为空")
 		}
 		go monitor(filePath)
+		http.Handle("/test",http.FileServer(http.Dir("index.html")))
 		http.HandleFunc("/",page)
 		http.Handle("/ws", websocket.Handler(genConn))
 		log.Fatal(http.ListenAndServe(fmt.Sprintf(":%d",port),nil))

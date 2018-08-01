@@ -1,0 +1,23 @@
+# Binaries for programs and plugins
+*.exe
+*.dll
+*.so
+*.dylib
+*.idea
+
+# Test binary, build with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with IDE
+*.out
+.log
+logs
+.bat
+.exe
+.project
+.sh
+.vscode
+debug
+*.test
+*.pyc
+tmp

@@ -36,21 +36,29 @@ func page(w http.ResponseWriter, r *http.Request) {
 					<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 				
 					<script>
-						$(function() {
-							var ws = new WebSocket("ws://"+ window.location.host +"/ws");
-							ws.onmessage = function(e) {
-								$('#log').append("<p style='color: white'>"+ e.data +"</p>").scrollTop($('#log')[0].scrollHeight)
-							};
-							ws.onclose = function () {
-								$('#status').css("background-color","red").text("链接失败")
+					 function connect (){
+								var ws = new WebSocket("ws://"+ window.location.host +"/ws");
+								ws.onmessage = function(e) {
+									$('#log').append("<p style='color: white'>"+ e.data +"</p>").scrollTop($('#log')[0].scrollHeight)
+								};
+								ws.onclose = function () {
+									$('#status').css("background-color","red").text("链接断开")
+									reConnect()
+								}
+								ws.onopen = function () {
+									$('#status').css("background-color","chartreuse").text("连接成功")
+								}
+								ws.onerror = function (e) {
+									$('#status').css("background-color","red").text("链接断开")
+								}
 							}
-							ws.onopen = function () {
-								$('#status').css("background-color","chartreuse").text("连接成功")
+
+                      function reConnect(){
+								setTimeout(function(){
+									connect();
+								},1000);
 							}
-							ws.onerror = function (e) {
-								$('#status').css("background-color","red").text("链接失败")
-							}
-						});
+						connect()
 					</script>
 				
 				</head>
