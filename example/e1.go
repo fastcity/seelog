@@ -9,7 +9,7 @@ import (
 )
 
 const (
-	TestLog  = "./test.log"	// yourproject 日志位置
+	TestLog  = "test.log"	// yourproject 日志位置
 	TestPort = 9999			// 查看日志时端口
 )
 
@@ -24,17 +24,16 @@ func main()  {
 }
 
 func yourProject()  {
-	os.Remove(TestLog)
-	f, err := os.Create(TestLog)
-	if err != nil {
+	f, err := os.OpenFile(TestLog, os.O_RDWR|os.O_CREATE, 0766);	if err != nil {
 		log.Fatal(err)
 	}
 	for i := 1; i <= 100; i++ {
 		time.Sleep(1 * time.Second)
-		testLog := fmt.Sprintf("「模拟日志」第[%d]行日志\n", i)
+		testLog := fmt.Sprintf("「模拟日志」[%s] 第[%d]行日志\n", time.Now().String(),i)
 		_, err := f.WriteString(testLog)
 		if err != nil {
 			log.Println(err.Error())
 		}
 	}
+	os.Remove(TestLog)
 }

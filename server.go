@@ -6,6 +6,7 @@ import (
 	"log"
 	"golang.org/x/net/websocket"
 	"time"
+	"html/template"
 )
 
 // 开启 httpServer
@@ -22,7 +23,13 @@ func server(port int)  {
 	// socket链接
 	http.Handle("/ws", websocket.Handler(genConn))
 	// 测试
-	http.Handle("/test",http.FileServer(http.Dir("index.html")))
+	http.HandleFunc("/test", func(writer http.ResponseWriter, request *http.Request) {
+		t, err := template.ParseFiles("index.html")
+		if (err != nil) {
+			log.Println(err)
+		}
+		t.Execute(writer, nil)
+	})
 	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%d",port),nil))
 }
 
