@@ -3,6 +3,7 @@
 
 ### 项目介绍
 * 与golang项目集成、提供浏览器实时查看日志的功能，类似 [tail -f xxx.log](https://www.cnblogs.com/fps2tao/p/7698224.html)
+* 支持多浏览器同时访问
 
 ### 集成方式
 * 在项目中引入seelog, **go get github.com/xmge/seelog**
@@ -12,7 +13,6 @@
 ### 项目展示
 
 ### TODO
-* 多浏览器访问
 * 暂停、清屏、截图
 * 页面布局
 
