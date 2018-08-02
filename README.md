@@ -26,8 +26,8 @@
 ![image](https://github.com/xmge/file/blob/master/images/seelog1.gif)
 
 ### 项目TODO
-* 页面布局
-* os.stat()延迟
-* 多台
 * 日志过滤
+* os.stat()延迟
+* 页面布局
+* 分布式
 
