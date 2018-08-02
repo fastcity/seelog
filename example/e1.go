@@ -28,7 +28,7 @@ func yourProject()  {
 		log.Fatal(err)
 	}
 	for i := 1; i <= 100; i++ {
-		time.Sleep(1 * time.Second)
+		time.Sleep(500 * time.Millisecond)
 		testLog := fmt.Sprintf("「模拟日志」[%s] 第[%d]行日志\n", time.Now().String(),i)
 		_, err := f.WriteString(testLog)
 		if err != nil {

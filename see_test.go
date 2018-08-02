@@ -31,10 +31,12 @@ func TestSee(t *testing.T) {
 	}
 	for i := 1; i <= 10000; i++ {
 		time.Sleep(1 * time.Second)
-		testLog := fmt.Sprintf("「模拟日志」[%s] 第[%d]行日志\n", time.Now().String(),i)
+		testLog := fmt.Sprintf("「模拟日志」[%s] 第[%d]行日志\n", time.Now().String(), i)
 		_, err := f.WriteString(testLog)
 		if err != nil {
 			log.Println(err.Error())
 		}
 	}
 }
+
+

@@ -19,15 +19,25 @@ func monitor(filePath string){
 	if err != nil {
 		log.Printf("[seelog] error:%v",err.Error())
 	}
-	msg := make([]byte,1024)
 	offset := fileInfo.Size()
 	for {
 		fileInfo,_ = os.Stat(filePath)
 		newOffset := fileInfo.Size()
 		if offset < newOffset {
-			file,_ := os.Open(filePath)
-			file.Seek(offset,0)
-			file.Read(msg)
+			msg := make([]byte,newOffset - offset)
+			file,err := os.Open(filePath)
+			if err != nil {
+				log.Printf("[seelog] error:%v",err.Error())
+			}
+			_,err = file.Seek(offset,0)
+			if err != nil {
+				log.Printf("[seelog] error:%v",err.Error())
+			}
+
+			_,err = file.Read(msg)
+			if err != nil {
+				log.Printf("[seelog] error:%v",err.Error())
+			}
 			manager.broadcast <- msg
 			offset = newOffset
 		}
