@@ -20,8 +20,7 @@ func main()  {
 	seelog.See(TestLog, TestPort)
 
 	// 模拟your项目
-	//yourProject()
-	time.Sleep(1 *time.Minute)
+	yourProject()
 }
 
 func yourProject()  {

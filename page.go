@@ -148,5 +148,4 @@ func page(w http.ResponseWriter, r *http.Request) {
 </style>
 </html>`
 	w.Write([]byte(content))
-	w.Header()
 }
