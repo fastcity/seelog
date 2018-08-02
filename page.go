@@ -24,7 +24,7 @@ func page(w http.ResponseWriter, r *http.Request) {
             var ws = new WebSocket("ws://"+ window.location.host +"/ws");
             ws.onmessage = function(e) {
                 if (out){
-                     $('#log').append("<p style='color: white'>"+ e.data +"</p>").scrollTop($('#log')[0].scrollHeight)
+                     $('#log').append("<pre style='color: white;font-size: 15px'>"+ e.data +"</pre>").scrollTop($('#log')[0].scrollHeight)
                 }
             };
             ws.onclose = function () {
@@ -143,6 +143,7 @@ func page(w http.ResponseWriter, r *http.Request) {
         height: 30px;
         width: 100px;
         font-size: medium;
+
     }
 </style>
 </html>`
