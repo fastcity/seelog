@@ -17,10 +17,15 @@ func monitor(filePath string) {
 	fileInfo, err := os.Stat(filePath)
 	if err != nil {
 		log.Printf("[seelog] error:%v", err.Error())
+		return
 	}
 	offset := fileInfo.Size()
 	for {
-		fileInfo, _ = os.Stat(filePath)
+		fileInfo, err = os.Stat(filePath)
+		if err != nil {
+			log.Printf("[seelog] error:%v", err.Error())
+			continue
+		}
 		newOffset := fileInfo.Size()
 		if offset < newOffset {
 			msg := make([]byte, newOffset-offset)
