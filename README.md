@@ -26,6 +26,7 @@
 ![image](https://github.com/xmge/file/blob/master/images/seelog1.gif)
 
 ### 项目TODO
+* 程序中直接输出日志
 * 日志过滤
 * os.stat()延迟
 * 页面布局
