@@ -1,6 +1,7 @@
 # seelog 
 > 有了seelog,妈妈再也不用担心我登录服务器查看日志le...   
-项目地址：https://github.com/xmge/seelog
+项目地址：https://github.com/xmge/seelog     
+欢迎各位gopher使用指正:smiley:
 
 ### 项目背景
 > A：我去:confused:,,程序又出问题了，你去看看日志到底是哪里错啦  
