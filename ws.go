@@ -45,7 +45,6 @@ func (manager *ClientManager) start() {
 				delete(manager.clients, conn)
 			}
 		case message := <-manager.broadcast:
-			fmt.Printf("ws接受到信息：%s",string(message))
 			for conn := range manager.clients {
 				select {
 				case conn.send <- message:
