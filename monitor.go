@@ -14,11 +14,17 @@ func monitor(filePath string) {
 		}
 	}()
 
-	fileInfo, err := os.Stat(filePath)
-	if err != nil {
-		log.Printf("[seelog] error:%v", err.Error())
-		return
+	var fileInfo os.FileInfo
+	var err error
+	for i :=1; i <= 10; i++{
+		fileInfo, err = os.Stat(filePath)
+		if err != nil {
+			log.Printf("[seelog] error:%v", err.Error())
+			continue
+		}
+		break
 	}
+
 	offset := fileInfo.Size()
 	for {
 		fileInfo, err = os.Stat(filePath)
@@ -47,6 +53,7 @@ func monitor(filePath string) {
 			offset = newOffset
 			file.Close()
 		}
+		offset = newOffset
 		time.Sleep(200 * time.Millisecond)
 	}
 

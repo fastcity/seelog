@@ -24,16 +24,24 @@ func main()  {
 }
 
 func yourProject()  {
-	f, err := os.OpenFile(TestLog, os.O_RDWR|os.O_CREATE, 0766);	if err != nil {
-		log.Fatal(err)
-	}
-	for i := 1; i <= 100; i++ {
-		time.Sleep(500 * time.Millisecond)
-		testLog := fmt.Sprintf("「模拟日志」[%s] 第[%d]行日志\n", time.Now().String(),i)
-		_, err := f.WriteString(testLog)
-		if err != nil {
-			log.Println(err.Error())
+	for {
+		f, err := os.OpenFile(TestLog, os.O_RDWR|os.O_CREATE, 0766);	if err != nil {
+			log.Panic(err)
+		}
+		for i := 1; i <= 10; i++ {
+			time.Sleep(500 * time.Millisecond)
+			testLog := fmt.Sprintf("「模拟日志」[%s] 第[%d]行日志\n", time.Now().String(),i)
+			_, err := f.WriteString(testLog)
+			if err != nil {
+				log.Panic(err)
+			}
+		}
+		if err := f.Close();err != nil {
+			log.Panic(err)
+		}
+		if err := os.Remove(TestLog);err != nil {
+			log.Panic(err)
 		}
 	}
-	os.Remove(TestLog)
+
 }
