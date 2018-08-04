@@ -3,7 +3,6 @@ package seelog
 import (
 	"golang.org/x/net/websocket"
 	"log"
-	"fmt"
 )
 
 //  websocket客户端
