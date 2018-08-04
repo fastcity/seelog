@@ -1,4 +1,4 @@
-# seelog  [![License](http://img.shields.io/badge/license-mit-blue.svg?style=flat-square)](https://github.com/xmge/seelog/blob/master/LICENSE)
+# seelog &nbsp;[![License](http://img.shields.io/badge/license-mit-blue.svg?style=flat-square)](https://github.com/xmge/seelog/blob/master/LICENSE)
 
 
 > 有了seelog,妈妈再也不用担心我登录服务器查看日志le...   
