@@ -6,28 +6,28 @@ import (
 )
 
 //  websocket客户端
-type Client struct {
+type client struct {
 	id     string
 	socket *websocket.Conn
 	send   chan []byte
 }
 
 // 客户端管理
-type ClientManager struct {
-	clients    map[*Client]bool
+type clientManager struct {
+	clients    map[*client]bool
 	broadcast  chan []byte
-	register   chan *Client
-	unregister chan *Client
+	register   chan *client
+	unregister chan *client
 }
 
-var manager = ClientManager{
+var manager = clientManager{
 	broadcast:  make(chan []byte),
-	register:   make(chan *Client),
-	unregister: make(chan *Client),
-	clients:    make(map[*Client]bool),
+	register:   make(chan *client),
+	unregister: make(chan *client),
+	clients:    make(map[*client]bool),
 }
 
-func (manager *ClientManager) start() {
+func (manager *clientManager) start() {
 	defer func() {
 		if err := recover(); err != nil {
 			log.Printf("[seelog] error:%+v", err)
@@ -56,7 +56,7 @@ func (manager *ClientManager) start() {
 	}
 }
 
-func (c *Client) write() {
+func (c *client) write() {
 	defer func() {
 		manager.unregister <- c
 		c.socket.Close()
@@ -74,7 +74,7 @@ func (c *Client) write() {
 	}
 }
 
-func (c *Client) read() {
+func (c *client) read() {
 	/*defer func() {
 		manager.unregister <- c
 		c.socket.Close()

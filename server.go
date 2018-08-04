@@ -35,7 +35,7 @@ func server(port int)  {
 
 // 创建client对象
 func genConn(ws *websocket.Conn)  {
-	client := &Client{time.Now().String(),ws,make(chan []byte,1024)}
+	client := &client{time.Now().String(),ws,make(chan []byte,1024)}
 	manager.register <- client
 	go client.read()
 	client.write()
