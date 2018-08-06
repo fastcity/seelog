@@ -14,17 +14,21 @@ func page(w http.ResponseWriter, r *http.Request) {
     <meta charset="UTF-8"/>
     <title>seelog</title>
     <link rel="shortcut icon" href="http://www.eiguo.cn/favicon.ico" type="image/x-icon" />
+    <!-- <link href="http://cdn.90so.net/layui/2.3.0/css/layui.css" rel="stylesheet" media="screen"> -->
     <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+    <!-- <script src="http://cdn.90so.net/layui/2.3.0/layui.js"></script> -->
     <script>
 
         var out = true
+        var filterText = ""
 
         function connect (){
             var ws = new WebSocket("ws://"+ window.location.host +"/ws");
             ws.onmessage = function(e) {
-                if (out){
-                     $('#log').append("<pre style='color: white;font-size: 15px'>"+ e.data +"</pre>").scrollTop($('#log')[0].scrollHeight)
+                console.log(filterText)
+                if (out && (filterText == "" || e.data.indexOf(filterText) != -1)){
+                    $('#log').append("<pre style='color: white;font-size: 15px'>"+ e.data +"</pre>").scrollTop($('#log')[0].scrollHeight)
                 }
             };
             ws.onclose = function () {
@@ -66,6 +70,11 @@ func page(w http.ResponseWriter, r *http.Request) {
             // 截屏
             $('#cut').click(function () {
                 printPhoto("log")
+            })
+
+            // 过滤
+            $('#filter').on('input',function () {
+                filterText = $('#filter').val()
             })
         })
 
@@ -117,6 +126,8 @@ func page(w http.ResponseWriter, r *http.Request) {
         <button id="pause">暂停</button>
         <button id="clear">清屏</button>
         <button id="cut">截图</button>
+        <span style="padding:1px;border:1px ; background:#FFF"><button style="width: auto">过滤</button><input id="filter" type="text"></span>
+
     </div>
 </header>
 <div id="log"></div>
@@ -143,8 +154,16 @@ func page(w http.ResponseWriter, r *http.Request) {
         height: 30px;
         width: 100px;
         font-size: medium;
-
     }
+
+    input {
+        background-color: lightyellow;
+        color: black;
+        font-size: medium;s
+        position:absolute;
+        height: 25px;
+    }
+
 </style>
 </html>`
 	w.Write([]byte(content))
